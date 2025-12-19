@@ -1,0 +1,315 @@
+/* =========================
+   Global Reset & Theme
+========================= */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --bg: #f4f7ff;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --text: #0f172a;
+  --muted: #64748b;
+  --radius: 14px;
+  --shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #eef2ff, #f8fafc);
+  color: var(--text);
+}
+
+/* =========================
+   Layout
+========================= */
+.dashboard {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================
+   Sidebar (Premium)
+========================= */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1e3a8a, #2563eb);
+  padding: 28px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset -1px 0 0 rgba(255,255,255,0.1);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+.sidebar button {
+  all: unset;
+  cursor: pointer;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  transition: all 0.35s ease;
+}
+
+.sidebar button:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateX(4px);
+}
+
+.sidebar .active {
+  background: white;
+  color: var(--primary-dark);
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   Main Content
+========================= */
+.content {
+  flex: 1;
+  padding: 36px;
+  overflow-y: auto;
+}
+
+.fade-in {
+  animation: fadeSlide 0.45s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   Card (Glass)
+========================= */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* =========================
+   Table (Elite)
+========================= */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-top: 20px;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 0 16px;
+}
+
+.table tbody tr {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+  transform: translateY(-3px);
+}
+
+.table td {
+  padding: 16px;
+}
+
+.table td:first-child {
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.table td:last-child {
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* =========================
+   Buttons
+========================= */
+.small-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.small-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* =========================
+   Form (Premium)
+========================= */
+.form {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form input,
+.form textarea,
+.form select {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+  resize:none;
+}
+
+.form textarea {
+  min-height: 120px;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form input[type="file"] {
+  padding: 10px;
+  background: #f1f5ff;
+}
+
+.form button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
+}
+
+/* =========================
+   Contact Card
+========================= */
+.card p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+
+.state-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.state-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 32px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeUp 0.4s ease;
+}
+
+.state-text {
+  font-size: 15px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Spinner */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(37, 99, 235, 0.2);
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.del {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+.mobile-warning {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #334155;
+}
