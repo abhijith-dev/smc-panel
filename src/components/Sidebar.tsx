@@ -7,9 +7,9 @@ export default function Sidebar({ active, onChange }: Props) {
   return (
     <aside className="sidebar">
       <h2 className="logo">
-        <a href="/home">
+        <a  onClick={() => onChange("home")}>
           <img
-            src="src/assets/logo.png"
+            src="/logo.png"
             width={"80px"}
             height={"80px"}
             style={{
