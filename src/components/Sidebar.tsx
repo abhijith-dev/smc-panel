@@ -1,6 +1,6 @@
 type Props = {
   active: string;
-  onChange: (section: string) => void;
+  onChange: (section: string, query?: string) => void;
 };
 
 export default function Sidebar({ active, onChange }: Props) {

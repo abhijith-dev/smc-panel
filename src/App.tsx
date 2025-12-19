@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
@@ -11,8 +11,8 @@ type Section = "home" | "projects" | "contact";
 export default function App() {
   const [active, setActive] = useState<Section>("home");
 
-  const handleChange = (section: Section, query: string = "") => {
-    setActive(section);
+  const handleChange = (section: string, query: string = "") => {
+    setActive(section as Section);
     const sectionWithQuery = query ? `${section}?${query}` : section;
     window.history.replaceState(null, "", `${sectionWithQuery}`);
   }
@@ -40,4 +40,3 @@ export default function App() {
     </div>
   );
 }
-
